@@ -6,13 +6,13 @@ Language: Exactly three 1 symbols (inferred; notebook confirmation pending). Alp
 
 ## NFA diagram
 
-![NFA diagram](images/n12-diagram.svg)
+![NFA diagram](images/NFA-12-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
 
 ## Test cases
 
-Load `n12t.txt` using Input → Multiple Run → Load Inputs. It contains only input strings, one per line, with accepted inputs first. Blank lines are whitespace and do not load the empty string; test ε separately using Enter Lambda.
+Load `NFA-12t.txt` using Input → Multiple Run → Load Inputs. It contains only input strings, one per line, with accepted inputs first. Blank lines are whitespace and do not load the empty string; test ε separately using Enter Lambda.
 
 | Input | Expected |
 |---|---|

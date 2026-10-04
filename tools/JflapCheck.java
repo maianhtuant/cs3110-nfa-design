@@ -21,7 +21,7 @@ public class JflapCheck {
     System.out.println("Actual JFLAP 7.1 simulator verification (headless, not GUI Multiple Run)");
     System.out.println("Predicates for #12/#16/#20/#21 are inferred; notebook confirmation pending.");
     for(int n:new int[]{8,12,16,20,21}) {
-      String base=String.format("n%02d",n);
+      String base=String.format("NFA-%02d",n);
       Automaton a=(Automaton)new XMLCodec().decode(root.resolve(base+".jff").toFile(),new HashMap<>());
       System.out.println("\nProblem "+n);
       List<String> inputs=new ArrayList<>(Files.readAllLines(root.resolve(base+"t.txt")));

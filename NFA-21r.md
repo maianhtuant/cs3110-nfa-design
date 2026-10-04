@@ -6,13 +6,13 @@ Language: Odd number of 0 symbols AND number of 1 symbols congruent to 1 modulo 
 
 ## NFA diagram
 
-![NFA diagram](images/n21-diagram.svg)
+![NFA diagram](images/NFA-21-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
 
 ## Test cases
 
-Load `n21t.txt` using Input → Multiple Run → Load Inputs. It contains only input strings, one per line, with accepted inputs first. Blank lines are whitespace and do not load the empty string; test ε separately using Enter Lambda.
+Load `NFA-21t.txt` using Input → Multiple Run → Load Inputs. It contains only input strings, one per line, with accepted inputs first. Blank lines are whitespace and do not load the empty string; test ε separately using Enter Lambda.
 
 | Input | Expected |
 |---|---|

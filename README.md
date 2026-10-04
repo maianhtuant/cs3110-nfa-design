@@ -6,15 +6,15 @@ Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five origin
 
 | Problem | Language currently checked | Report |
 |---|---|---|
-| 8 | Starts with 01 and ends with 10 | [n08r.md](n08r.md) |
-| 12 | Exactly three 1 symbols — inferred | [n12r.md](n12r.md) |
-| 16 | Every odd position is 1, counting from 1 — inferred | [n16r.md](n16r.md) |
-| 20 | Odd number of 0 symbols OR number of 1 symbols is 1 modulo 3 — inferred | [n20r.md](n20r.md) |
-| 21 | Odd number of 0 symbols AND number of 1 symbols is 1 modulo 3 — inferred | [n21r.md](n21r.md) |
+| 8 | Starts with 01 and ends with 10 | [NFA-08r.md](NFA-08r.md) |
+| 12 | Exactly three 1 symbols — inferred | [NFA-12r.md](NFA-12r.md) |
+| 16 | Every odd position is 1, counting from 1 — inferred | [NFA-16r.md](NFA-16r.md) |
+| 20 | Odd number of 0 symbols OR number of 1 symbols is 1 modulo 3 — inferred | [NFA-20r.md](NFA-20r.md) |
+| 21 | Odd number of 0 symbols AND number of 1 symbols is 1 modulo 3 — inferred | [NFA-21r.md](NFA-21r.md) |
 
 ## Files and verification
 
-For each problem, `nXX.jff` is the original automaton, `nXXt.txt` is a JFLAP input file, and `nXXr.md` contains its diagram, expected test results, and evidence status. Tests contain only strings, one per line, with accepting strings first. The empty string must be added manually with **Enter Lambda**; a blank line in the text file is not an empty-string test. [JFLAP's official tutorial](https://www.jflap.org/tutorial/fa/createfa/fa.html) documents whitespace-delimited loading and Multiple Run.
+For each problem, `NFA-XX.jff` is the original automaton, `NFA-XXt.txt` is a JFLAP input file, and `NFA-XXr.md` contains its diagram, expected test results, and evidence status. Tests contain only strings, one per line, with accepting strings first. The empty string must be added manually with **Enter Lambda**; a blank line in the text file is not an empty-string test. [JFLAP's official tutorial](https://www.jflap.org/tutorial/fa/createfa/fa.html) documents whitespace-delimited loading and Multiple Run.
 
 The original designs were not changed: no discrepancy was found against the current predicates. No artificial mistakes or backdated commits were introduced. Four machines are deterministic (with #16 partial); these are mathematically valid NFAs, though the instructor may want explicit nondeterminism.
 
@@ -39,7 +39,7 @@ On Windows use `;` instead of `:` between classpath entries.
 ## Finish the JFLAP evidence
 
 1. Confirm all five definitions against the notebook. If one differs, commit the corrected design and tests with an explanation.
-2. Open each `nXX.jff`, select Input → Multiple Run, load `nXXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
+2. Open each `NFA-XX.jff`, select Input → Multiple Run, load `NFA-XXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
 3. For at least three problems, use the proposed computation examples or an actual surprising string. Draw the complete computation tree by hand, photograph it, and capture the initial JFLAP configuration and each subsequent step. The reports supply state sets to check your drawing against, not substitutes for hand-drawn evidence.
 4. Complete the personal reflection below from your actual experience, then commit it.
 
