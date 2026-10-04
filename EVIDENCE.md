@@ -20,6 +20,10 @@ Capture the diagram and all test results together if readable. If the whole resu
 
 Name additional screenshots `nXX-batch-02.png`, etc., and embed those separately in the report. The existing SVG diagrams already provide NFA pictures; the batch screenshots provide evidence from JFLAP itself.
 
+## Uploaded handwritten notes
+
+[Homework-NFA.pdf](Homework-NFA.pdf) contains the student’s original design diagrams for all five problems. Pages are embedded in the corresponding reports. These notes do not yet show computation trees for the selected input strings. The reports record the missing accepting-state `0` loop in the #12 handwritten sketch and clarify the #21 note about AND and ε; the JFLAP designs are already correct.
+
 ## Hand-drawn trees and step screenshots for three problems
 
 Use Input → Step by State or Step with Closure. There are no ε transitions, so either mode works. Capture the initial configuration as step 00. Show the entire JFLAP pane, including the remaining input and active configurations. For each tree, label nodes with the state and remaining input, label edges with the input symbol, and mark dead branches and final acceptance/rejection.

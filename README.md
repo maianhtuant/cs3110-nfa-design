@@ -2,7 +2,7 @@
 
 Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five original JFLAP files; the next commit adds tests, diagrams, reports, and reproducible verification.
 
-**Work in progress — not ready for grading.** The student supplied and confirmed all five language definitions. All five existing automata match those definitions; no transition changes were needed. JFLAP batch screenshots show the complete problem-specific test files for all five problems, with accepting inputs first and every result correct. Earlier screenshots also document the empty-string checks. Hand-drawn computation trees and step screenshots for at least three problems remain outstanding. The learning reflection below has been added from the student's notes with AI editing assistance.
+**Work in progress — not ready for grading.** The student supplied and confirmed all five language definitions. All five existing automata match those definitions; no transition changes were needed. JFLAP batch screenshots show the complete problem-specific test files for all five problems, with accepting inputs first and every result correct. Earlier screenshots also document the empty-string checks. The [handwritten design notes](Homework-NFA.pdf) are uploaded and embedded in the reports. String-specific hand-drawn computation trees and step screenshots for at least three problems remain outstanding. The learning reflection below has been added from the student's notes with AI editing assistance.
 
 | Problem | Language currently checked | Report |
 |---|---|---|
