@@ -1,6 +1,6 @@
 # Evidence capture checklist
 
-The automata and expected results are verified. Five student-provided batch screenshots are attached and their visible results checked. They use a shared input list; rerun each problem-specific test file to cover the missing cases listed in each report. The student will capture the JFLAP screenshots and supply the hand-drawn photos; the README reflection has been added from the student’s notes with AI editing assistance. Save images in this repo's `images` folder.
+The automata and expected results are verified. Five student-provided batch screenshots now show every input in each problem-specific test file, with all results checked and correct. Earlier runs are retained as `images/nXX-epsilon.png` to document the empty-string checks. The student will capture the JFLAP screenshots and supply the hand-drawn photos; the README reflection has been added from the student’s notes with AI editing assistance. Save images in this repo's `images` folder.
 
 ## Batch runs for all five problems
 

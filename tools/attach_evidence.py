@@ -6,7 +6,8 @@ STEPS = {8: 6, 16: 3, 20: 4}
 
 def inventory(n):
     base = f'n{n:02}'
-    items = [(f'{base}-batch', 'JFLAP Multiple Run results')]
+    items = [(f'{base}-batch', 'JFLAP Multiple Run results'),
+             (f'{base}-epsilon', 'Earlier JFLAP run showing the empty-string result')]
     if n in STEPS:
         items.append((f'{base}-tree', 'Hand-drawn computation tree'))
         items.extend((f'{base}-step-{i:02}', f'JFLAP step {i}') for i in range(STEPS[n] + 1))
