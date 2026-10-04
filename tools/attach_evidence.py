@@ -2,15 +2,16 @@
 """Embed existing evidence images in marked report sections; never invent evidence."""
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
-STEPS = {8: 6, 16: 3, 20: 4}
+STEPS = {8: 6, 12: 9, 16: 5}
 
 def inventory(n):
     base = f'n{n:02}'
     items = [(f'{base}-batch', 'JFLAP Multiple Run results'),
              (f'{base}-epsilon', 'Earlier JFLAP run showing the empty-string result')]
     if n in STEPS:
-        items.append((f'{base}-tree', 'Hand-drawn computation tree'))
         items.extend((f'{base}-step-{i:02}', f'JFLAP step {i}') for i in range(STEPS[n] + 1))
+    if n == 12:
+        items.extend((f'{base}-reject-step-{i:02}', f'JFLAP fourth-1 rejection, step {i}') for i in range(8))
     return items
 
 def main():

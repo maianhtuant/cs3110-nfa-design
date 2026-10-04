@@ -1,0 +1,32 @@
+Actual JFLAP GUI configurations: status 0=live, 1=accept, 2=reject.
+n08 input=011010 step=0 q0 remaining=011010 status=0
+n08 input=011010 step=1 q1 remaining=11010 status=0
+n08 input=011010 step=2 q2 remaining=1010 status=0, q3 remaining=1010 status=0
+n08 input=011010 step=3 q3 remaining=010 status=0, q2 remaining=010 status=0, q3 remaining=1010 status=2
+n08 input=011010 step=4 q2 remaining=10 status=0, q4 remaining=10 status=0
+n08 input=011010 step=5 q3 remaining=0 status=0, q2 remaining=0 status=0, q4 remaining=10 status=2
+n08 input=011010 step=6 q2 remaining= status=0, q4 remaining= status=1
+n12 input=010101000 step=0 q0 remaining=010101000 status=0
+n12 input=010101000 step=1 q0 remaining=10101000 status=0
+n12 input=010101000 step=2 q1 remaining=0101000 status=0
+n12 input=010101000 step=3 q1 remaining=101000 status=0
+n12 input=010101000 step=4 q2 remaining=01000 status=0
+n12 input=010101000 step=5 q2 remaining=1000 status=0
+n12 input=010101000 step=6 q3 remaining=000 status=0
+n12 input=010101000 step=7 q3 remaining=00 status=0
+n12 input=010101000 step=8 q3 remaining=0 status=0
+n12 input=010101000 step=9 q3 remaining= status=1
+n12 input=0101011 step=0 q0 remaining=0101011 status=0
+n12 input=0101011 step=1 q0 remaining=101011 status=0
+n12 input=0101011 step=2 q1 remaining=01011 status=0
+n12 input=0101011 step=3 q1 remaining=1011 status=0
+n12 input=0101011 step=4 q2 remaining=011 status=0
+n12 input=0101011 step=5 q2 remaining=11 status=0
+n12 input=0101011 step=6 q3 remaining=1 status=0
+n12 input=0101011 step=7 q3 remaining=1 status=2
+n16 input=10100 step=0 q0 remaining=10100 status=0
+n16 input=10100 step=1 q1 remaining=0100 status=0
+n16 input=10100 step=2 q0 remaining=100 status=0
+n16 input=10100 step=3 q1 remaining=00 status=0
+n16 input=10100 step=4 q0 remaining=0 status=0
+n16 input=10100 step=5 q0 remaining=0 status=2

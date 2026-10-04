@@ -2,7 +2,7 @@
 
 Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five original JFLAP files; the next commit adds tests, diagrams, reports, and reproducible verification.
 
-**Work in progress — not ready for grading.** The student supplied and confirmed all five language definitions. All five existing automata match those definitions; no transition changes were needed. JFLAP batch screenshots show the complete problem-specific test files for all five problems, with accepting inputs first and every result correct. Earlier screenshots also document the empty-string checks. The [handwritten design notes](Homework-NFA.pdf) and [handwritten test traces](handwritetest.pdf) are uploaded and embedded in the relevant reports. The revised test traces for #8, #12, and #16 are correct; the #12 report records how the fourth-1 error was corrected. The JFLAP automaton for #12 was already correct. String-specific hand-drawn computation trees and step screenshots for at least three problems remain outstanding. The learning reflection below has been added from the student's notes with AI editing assistance.
+All five automata match the student-supplied language definitions. The repo contains the required JFLAP files, ordered test files, NFA diagrams, complete batch screenshots, handwritten design notes and input traces, and the learning reflection. Matching JFLAP step captures are included for #8, #12, and #16, with an additional fourth-1 rejection series for #12. The screenshots were captured from real JFLAP 7.1 simulation panes using a Java helper authorized by the student. The handwritten #8 page lists active-state sets; its accompanying JFLAP series shows the individual live and dead branches.
 
 | Problem | Language currently checked | Report |
 |---|---|---|
@@ -36,14 +36,11 @@ java -Djava.awt.headless=true -cp /tmp/cs3110-jflap-check:/path/to/JFLAP7.1.jar 
 
 On Windows use `;` instead of `:` between classpath entries.
 
-## Finish the JFLAP evidence
+## JFLAP computation evidence
 
-Follow [EVIDENCE.md](EVIDENCE.md) for exact image names and the three selected computation examples. After saving images, run `python3 tools/attach_evidence.py` to embed them in the reports. Review every screenshot against the expected results before submitting.
+See [EVIDENCE.md](EVIDENCE.md) for the evidence inventory. The report for #8 captures `011010` accepting, #12 captures `010101000` accepting and `0101011` rejecting, and #16 captures `10100` rejecting. The handwritten traces and these captures agree. [jflap-step-log.txt](jflap-step-log.txt) records the actual JFLAP configurations at each step; all 31 snapshots were checked against the independent simulator.
 
-1. Read the correctness argument in each report and check that you can explain what its states represent.
-2. Open each `nXX.jff`, select Input → Multiple Run, load `nXXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
-3. For at least three problems, use the proposed computation examples or an actual surprising string. Draw the complete computation tree by hand, photograph it, and capture the initial JFLAP configuration and each subsequent step. The reports supply state sets to check your drawing against, not substitutes for hand-drawn evidence.
-4. Complete the personal reflection below from your actual experience, then commit it.
+The images were saved directly from the live JFLAP window content after activating its real Step button. They exclude unrelated desktop content. The helper source is [tools/CaptureJflapSteps.java](tools/CaptureJflapSteps.java).
 
 **Step by State vs Step with Closure:** Step by State exposes individual transitions, including ε transitions. Step with Closure incorporates ε-reachable states automatically around symbol steps. All five supplied files have no ε transitions, so the two simulators agree here. #8 branches because the same state has two outgoing transitions labeled 1. Keep every possible next state; acceptance requires at least one accepting branch after consuming the entire input.
 
