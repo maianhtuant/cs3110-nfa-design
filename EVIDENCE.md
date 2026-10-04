@@ -1,6 +1,6 @@
 # Evidence capture checklist
 
-The automata and expected results are verified. The student will capture the JFLAP screenshots and supply the hand-drawn photos; personal reflection will be written later. Save images in this repo's `images` folder.
+The automata and expected results are verified. Five student-provided batch screenshots are attached and their visible results checked. They use a shared input list; rerun each problem-specific test file to cover the missing cases listed in each report. The student will capture the JFLAP screenshots and supply the hand-drawn photos; personal reflection will be written later. Save images in this repo's `images` folder.
 
 ## Batch runs for all five problems
 

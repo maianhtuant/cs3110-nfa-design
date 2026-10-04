@@ -45,7 +45,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. A student-provided GUI Multiple Run screenshot is attached below. All 18 displayed results, including ε, match the language. The screenshot uses a shared input list and does not show the full problem-specific test file; full-suite GUI evidence remains pending.
 
 ## Computation example `01111`
 
@@ -64,12 +64,39 @@ One 0 and four 1 symbols satisfy both conditions. The machine accepts only when 
 
 **Student evidence pending:** draw this computation by hand, including all branches for #8, then capture JFLAP Step by State or Step with Closure at the initial configuration and after each symbol. Repeat for at least three problems. Add the real hand-drawn photo and screenshots here; the table above does not replace them.
 
+## Review of supplied batch screenshot
+
+The screenshot shows the NFA and these actual results:
+
+| Input | JFLAP result |
+|---|---|
+| ε | Reject |
+| `0` | Reject |
+| `1` | Reject |
+| `0110` | Reject |
+| `01010` | Reject |
+| `01110` | Reject |
+| `010010` | Reject |
+| `011010` | Reject |
+| `0111110` | Reject |
+| `0101010` | Reject |
+| `010` | Reject |
+| `00` | Reject |
+| `11` | Reject |
+| `0100` | Accept |
+| `1010` | Reject |
+| `0010` | Accept |
+| `01101` | Reject |
+| `01011` | Reject |
+
+Every displayed result is correct. Test-file inputs not shown: `01`, `10`, `01111`, `11110`, `0001`, `1000`, `1010101`, `0001111`, `01111111`, `111`, `1111`, `001`, `011`, `0111`, `001111`. Reload this problem’s own test file and capture the complete results to document those cases. The supplied screenshot mixes accepting and rejecting rows; the saved `.txt` file already orders accepting inputs first.
+
 ## JFLAP and hand-drawn evidence
 
 See [EVIDENCE.md](EVIDENCE.md) for capture instructions and filenames.
 
 <!-- evidence:start -->
 
-Pending: `NFA-21-batch.png`.
+![JFLAP Multiple Run results](images/NFA-21-batch.png)
 
 <!-- evidence:end -->

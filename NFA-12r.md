@@ -42,8 +42,35 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. A student-provided GUI Multiple Run screenshot is attached below. All 18 displayed results, including ε, match the language. The screenshot uses a shared input list and does not show the full problem-specific test file; full-suite GUI evidence remains pending.
 
+
+## Review of supplied batch screenshot
+
+The screenshot shows the NFA and these actual results:
+
+| Input | JFLAP result |
+|---|---|
+| ε | Reject |
+| `0` | Reject |
+| `1` | Reject |
+| `0110` | Reject |
+| `01010` | Reject |
+| `01110` | Accept |
+| `010010` | Reject |
+| `011010` | Accept |
+| `0111110` | Reject |
+| `0101010` | Accept |
+| `010` | Reject |
+| `00` | Reject |
+| `11` | Reject |
+| `0100` | Reject |
+| `1010` | Reject |
+| `0010` | Reject |
+| `01101` | Accept |
+| `01011` | Accept |
+
+Every displayed result is correct. Test-file inputs not shown: `111`, `0111`, `1110`, `10101`, `000111000`, `1001001`, `1111`, `000`, `11110`, `011110`, `0001111000`. Reload this problem’s own test file and capture the complete results to document those cases. The supplied screenshot mixes accepting and rejecting rows; the saved `.txt` file already orders accepting inputs first.
 
 ## JFLAP and hand-drawn evidence
 
@@ -51,6 +78,6 @@ See [EVIDENCE.md](EVIDENCE.md) for capture instructions and filenames.
 
 <!-- evidence:start -->
 
-Pending: `NFA-12-batch.png`.
+![JFLAP Multiple Run results](images/NFA-12-batch.png)
 
 <!-- evidence:end -->
