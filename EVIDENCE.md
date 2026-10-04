@@ -55,15 +55,3 @@ Draw the chain q0 → q2 → q4 → q0 → q2, with each edge labeled `1`. Four 
 Save the photograph as `n20-tree.png` and screenshots as `n20-step-00.png` through `n20-step-04.png`.
 
 These examples are corner cases selected for study. Describe an actual surprise or mistake only if it happened; otherwise say what the examples helped you check. The drawings must be yours, and the screenshots must show actual JFLAP execution.
-
-## Attach and finish
-
-On Mac, Shift–Command–4 captures a selected region. Save the images using the names above; `.jpg` and `.jpeg` are also supported. Then run:
-
-```sh
-python3 tools/attach_evidence.py
-```
-
-The script attaches existing primary batch images, tree photos, and selected step screenshots to each report, and lists missing files. It does not judge image content or declare the assignment complete. Open the reports and check legibility, complete result coverage, and correct state transitions.
-
-Finally, review your reflection in README.md, update the completion status only after all required evidence is present, commit and push the changes, and submit the repository URL.
