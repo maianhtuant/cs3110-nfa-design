@@ -6,11 +6,11 @@ Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five origin
 
 | Problem | Language currently checked | Report |
 |---|---|---|
-| 8 | Starts with 01 and ends with 10 | [NFA-08r.md](NFA-08r.md) |
-| 12 | Exactly three 1 symbols | [NFA-12r.md](NFA-12r.md) |
-| 16 | Every odd position is 1, counting from 1 | [NFA-16r.md](NFA-16r.md) |
-| 20 | Odd number of 0 symbols OR number of 1 symbols is 1 modulo 3 | [NFA-20r.md](NFA-20r.md) |
-| 21 | Odd number of 0 symbols AND number of 1 symbols is 1 modulo 3 | [NFA-21r.md](NFA-21r.md) |
+| 8 | {string s\| s starts with 01 and ends with 10 } | [NFA-08r.md](NFA-08r.md) |
+| 12 | {string s\| s contains exactly 3 1's } | [NFA-12r.md](NFA-12r.md) |
+| 16 | {string s\| every odd position of s is 1, starting at 1 in positional index } (e.g. 101 is in the lang.) | [NFA-16r.md](NFA-16r.md) |
+| 20 | {string s\| s has 3k+1 of 1's, where k>=0 or odd number of 0's} | [NFA-20r.md](NFA-20r.md) |
+| 21 | {string s\| s has 3k+1 of 1's, where k>=0 and odd number of 0's} | [NFA-21r.md](NFA-21r.md) |
 
 ## Files and verification
 
