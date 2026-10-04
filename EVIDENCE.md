@@ -1,6 +1,6 @@
 # Evidence capture checklist
 
-The automata and expected results are verified. Five student-provided batch screenshots are attached and their visible results checked. They use a shared input list; rerun each problem-specific test file to cover the missing cases listed in each report. The student will capture the JFLAP screenshots and supply the hand-drawn photos; personal reflection will be written later. Save images in this repo's `images` folder.
+The automata and expected results are verified. Five student-provided batch screenshots are attached and their visible results checked. They use a shared input list; rerun each problem-specific test file to cover the missing cases listed in each report. The student will capture the JFLAP screenshots and supply the hand-drawn photos; the README reflection has been added from the student’s notes with AI editing assistance. Save images in this repo's `images` folder.
 
 ## Batch runs for all five problems
 
@@ -66,4 +66,4 @@ python3 tools/attach_evidence.py
 
 The script attaches existing primary batch images, tree photos, and selected step screenshots to each report, and lists missing files. It does not judge image content or declare the assignment complete. Open the reports and check legibility, complete result coverage, and correct state transitions.
 
-Finally, write your reflection in README.md, update the completion status only after all required evidence is present, commit and push the changes, and submit the repository URL.
+Finally, review your reflection in README.md, update the completion status only after all required evidence is present, commit and push the changes, and submit the repository URL.

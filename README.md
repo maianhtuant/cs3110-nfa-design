@@ -2,7 +2,7 @@
 
 Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five original JFLAP files; the next commit adds tests, diagrams, reports, and reproducible verification.
 
-**Work in progress — not ready for grading.** The student supplied and confirmed all five language definitions. All five existing automata match those definitions; no transition changes were needed. JFLAP batch screenshots are attached for all five problems; all displayed results are correct. The screenshots use a shared input list, so complete runs of each problem-specific test file still need to be documented. Hand-drawn computation trees and step screenshots for at least three problems, and the student's personal learning reflection, remain outstanding.
+**Work in progress — not ready for grading.** The student supplied and confirmed all five language definitions. All five existing automata match those definitions; no transition changes were needed. JFLAP batch screenshots are attached for all five problems; all displayed results are correct. The screenshots use a shared input list, so complete runs of each problem-specific test file still need to be documented. Hand-drawn computation trees and step screenshots for at least three problems remain outstanding. The learning reflection below has been added from the student's notes with AI editing assistance.
 
 | Problem | Language currently checked | Report |
 |---|---|---|
@@ -49,17 +49,26 @@ Follow [EVIDENCE.md](EVIDENCE.md) for exact image names and the three selected c
 
 For a screenshot on macOS, press Shift–Command–4 and drag a region, or press Space after that shortcut to choose a window. On Windows, use Windows–Shift–S. On Linux, use the desktop Screenshot application. Include the input, result, and relevant state information in each capture.
 
-## Learning reflection — student input required
+## Learning reflection
 
-The student will write this reflection later.
+### 1. Challenges and AI support
 
-These prompts need the student's own experience; no personal struggle or surprise has been invented.
+Problems 20 and 21 gave me the most trouble because I had to combine the number of 1's with the parity of the number of 0's. I did not avoid any problem because it was challenging. I asked AI to check my automata and help generate multiple test strings so I could identify cases I might have missed. The checks helped me compare my designs with the language definitions.
 
-- Which problem gave you the most trouble, and why? Did you skip a harder problem because of the deadline? What did you ask AI or the instructor?
-- Which strings actually surprised you? Which next states did you overlook, and why? Explain the fix and reference the corresponding commit and evidence.
-- How will you avoid these mistakes in future controller/compiler tasks, projects, and exams?
-- What other insights or questions should the grader know?
+### 2. What I learned about AND, OR, NFAs, and DFAs
 
-Technical observations you can consider: #8 requires retaining both branches after `011`; #16 demonstrates that reaching a final state early does not guarantee acceptance; #20 and #21 distinguish OR from AND when combining parity and remainder conditions. These are verified observations, not claims about the student's personal experience.
+Problems 20 and 21 helped me understand the difference between OR and AND. Separate nondeterministic branches naturally express OR because a string is accepted if at least one branch accepts. That construction alone does not express AND: both conditions must hold for the same input. An NFA can still recognize an AND condition by tracking both conditions together. In my design for problem 21, each state records the number of 1's modulo 3 and whether the number of 0's is odd or even. Only the state satisfying both conditions accepts.
 
-AI assistance was used to inspect the existing automata, formulate language predicates now confirmed by the student, generate tests and diagrams, and run verification. The student still needs to supply personal reflections and hand-drawn/GUI evidence.
+For example, `1111` belongs to problem 20's language because it has 3(1)+1 ones. It does not belong to problem 21's language because it has zero zeros, which is even. This is a useful test for distinguishing OR from AND.
+
+I also learned that NFAs and DFAs share the same basic components: states, transitions, an initial state, and accepting states. A DFA has exactly one next state for each state and input symbol, while an NFA may have several possible next states, no next state, or transitions that consume no input. A DFA is a special case of an NFA.
+
+To avoid missing next states in future controller or compiler tasks, projects, and exams, I will write down the complete set of reachable states after each input symbol and keep every branch until it has no valid transition. I will also check that the entire input has been consumed before deciding that a string is accepted.
+
+### 3. Other insights and questions
+
+This exercise showed me why testing should include the shortest accepted strings, the empty string, typical inputs, and boundary cases. For counting conditions, I should test values immediately below, at, and above the required count. For combined conditions, I should test all four possibilities: both conditions true, only the first true, only the second true, and both false.
+
+Writing down what each state means makes a design easier to explain and check. Keeping the original design and later changes in GitHub also makes the work easier to review. One question I would like to explore further is when an NFA makes a language easier to design, and when tracking several conditions together in a DFA is clearer.
+
+AI assistance was used to check the existing automata, generate test sets and diagrams, run verification, and help edit this reflection from my notes. Hand-drawn computation trees and step-by-step JFLAP evidence remain to be added.
