@@ -24,6 +24,10 @@ Name additional screenshots `nXX-batch-02.png`, etc., and embed those separately
 
 [Homework-NFA.pdf](Homework-NFA.pdf) contains the student’s original design diagrams for all five problems. Pages are embedded in the corresponding reports. These notes do not yet show computation trees for the selected input strings. The reports record the missing accepting-state `0` loop in the #12 handwritten sketch and clarify the #21 note about AND and ε; the JFLAP designs are already correct.
 
+## Uploaded handwritten test traces
+
+[handwritetest.pdf](handwritetest.pdf) contains active-state traces for #8, #12, and #16. The #8 and #16 traces are correct. For #12, `01010101` has four 1 symbols and rejects; the accepting state has no `1` transition, so the computation cannot cycle back to A. The report preserves and explains this handwritten mistake. Correct the handwritten #12 trace and provide the matching JFLAP step screenshots. The #8 trace lists state sets; individual branches and dead branches would make the computation tree explicit.
+
 ## Hand-drawn trees and step screenshots for three problems
 
 Use Input → Step by State or Step with Closure. There are no ε transitions, so either mode works. Capture the initial configuration as step 00. Show the entire JFLAP pane, including the remaining input and active configurations. For each tree, label nodes with the state and remaining input, label edges with the input symbol, and mark dead branches and final acceptance/rejection.
