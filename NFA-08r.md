@@ -1,14 +1,18 @@
 # Problem 8
 
-Language: Starts with 01 and ends with 10 (confirmed by local course document). Alphabet: `{0,1}`.
+Language: Starts with 01 and ends with 10. Alphabet: `{0,1}`.
 
-This definition matches the local course document.
+The language definition was supplied and confirmed by the student; it also matches the local course document.
 
 ## NFA diagram
 
 ![NFA diagram](images/NFA-08-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
+
+## Why the design recognizes the language
+
+The initial path consumes `01`. The branch from q1 to q3 permits the overlapping shortest input `010`. The branch through q2 consumes any middle symbols, then guesses the final `10` by moving to q3 on `1` and q4 on `0`. Because q4 has no outgoing transitions, an accepting path must consume the whole input and end with `10`. Conversely, every string starting with `01` and ending with `10` has one of these accepting paths.
 
 ## Test cases
 
@@ -41,7 +45,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. This is bounded evidence, and inferred predicates still require notebook confirmation. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 
 ## Computation example `011010`
 

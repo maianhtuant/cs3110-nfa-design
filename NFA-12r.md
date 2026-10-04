@@ -1,14 +1,18 @@
 # Problem 12
 
-Language: Exactly three 1 symbols (inferred; notebook confirmation pending). Alphabet: `{0,1}`.
+Language: Exactly three 1 symbols. Alphabet: `{0,1}`.
 
-**Provisional:** this definition was inferred from the automaton. Confirm against the notebook before submission.
+The language definition was supplied and confirmed by the student.
 
 ## NFA diagram
 
 ![NFA diagram](images/NFA-12-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
+
+## Why the design recognizes the language
+
+State q0 means zero 1 symbols have been read, q1 means one, q2 means two, and q3 means three. Each `0` preserves the count; each `1` advances it. Only q3 accepts, and it has no `1` transition, so a fourth 1 kills the computation. Therefore acceptance is equivalent to exactly three 1 symbols.
 
 ## Test cases
 
@@ -38,5 +42,5 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. This is bounded evidence, and inferred predicates still require notebook confirmation. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 

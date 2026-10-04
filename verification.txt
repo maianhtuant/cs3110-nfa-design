@@ -1,5 +1,5 @@
 Actual JFLAP 7.1 simulator verification (headless, not GUI Multiple Run)
-Predicates for #12/#16/#20/#21 are inferred; notebook confirmation pending.
+All predicates match the student-supplied language definitions.
 
 Problem 8
 010	Accept	PASS (both simulators)

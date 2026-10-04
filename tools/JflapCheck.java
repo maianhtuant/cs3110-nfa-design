@@ -19,7 +19,7 @@ public class JflapCheck {
   public static void main(String[] args) throws Exception {
     Path root=Paths.get(args[0]);
     System.out.println("Actual JFLAP 7.1 simulator verification (headless, not GUI Multiple Run)");
-    System.out.println("Predicates for #12/#16/#20/#21 are inferred; notebook confirmation pending.");
+    System.out.println("All predicates match the student-supplied language definitions.");
     for(int n:new int[]{8,12,16,20,21}) {
       String base=String.format("NFA-%02d",n);
       Automaton a=(Automaton)new XMLCodec().decode(root.resolve(base+".jff").toFile(),new HashMap<>());

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Compare the JFF transition relations against provisional language predicates."""
+"""Compare the JFF transition relations against confirmed language predicates."""
 from pathlib import Path
 from itertools import product
 import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parent.parent
 LANGUAGES = {
- 8: ("Starts with 01 and ends with 10 (confirmed by local course document)", lambda s: s.startswith("01") and s.endswith("10")),
- 12: ("Exactly three 1 symbols (inferred; notebook confirmation pending)", lambda s: s.count("1") == 3),
- 16: ("Every odd-numbered position is 1, positions start at 1 (inferred)", lambda s: all(c == "1" for c in s[::2])),
- 20: ("Odd number of 0 symbols OR number of 1 symbols congruent to 1 modulo 3 (inferred)", lambda s: s.count("0") % 2 == 1 or s.count("1") % 3 == 1),
- 21: ("Odd number of 0 symbols AND number of 1 symbols congruent to 1 modulo 3 (inferred)", lambda s: s.count("0") % 2 == 1 and s.count("1") % 3 == 1),
+ 8: ("Starts with 01 and ends with 10", lambda s: s.startswith("01") and s.endswith("10")),
+ 12: ("Exactly three 1 symbols", lambda s: s.count("1") == 3),
+ 16: ("Every odd-numbered position is 1, positions start at 1", lambda s: all(c == "1" for c in s[::2])),
+ 20: ("Odd number of 0 symbols OR number of 1 symbols congruent to 1 modulo 3", lambda s: s.count("0") % 2 == 1 or s.count("1") % 3 == 1),
+ 21: ("Odd number of 0 symbols AND number of 1 symbols congruent to 1 modulo 3", lambda s: s.count("0") % 2 == 1 and s.count("1") % 3 == 1),
 }
 def read(n):
  a=ET.parse(ROOT / f"NFA-{n:02}.jff").getroot().find("automaton")
@@ -46,5 +46,5 @@ def check():
    assert previous or not expected, "Accepted input after rejected input"
    previous=expected
   print(f"#{n}: {count} binary strings through length 12 match predicate; tests ordered correctly")
- print("Notebook confirmation is still required for inferred predicates. GUI verification is separate.")
+ print("All predicates match the student-supplied language definitions. GUI verification is separate.")
 if __name__ == "__main__": check()

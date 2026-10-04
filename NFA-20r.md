@@ -1,14 +1,18 @@
 # Problem 20
 
-Language: Odd number of 0 symbols OR number of 1 symbols congruent to 1 modulo 3 (inferred). Alphabet: `{0,1}`.
+Language: Odd number of 0 symbols OR number of 1 symbols congruent to 1 modulo 3. Alphabet: `{0,1}`.
 
-**Provisional:** this definition was inferred from the automaton. Confirm against the notebook before submission.
+The language definition was supplied and confirmed by the student.
 
 ## NFA diagram
 
 ![NFA diagram](images/NFA-20-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
+
+## Why the design recognizes the language
+
+Track the pair (number of 0 symbols modulo 2, number of 1 symbols modulo 3): q0=(0,0), q1=(1,0), q2=(0,1), q3=(1,1), q4=(0,2), q5=(1,2). Every `0` toggles the first coordinate and every `1` increments the second modulo 3. Accepting states q1, q2, q3, and q5 are exactly the pairs where the first coordinate is 1 OR the second coordinate is 1. For a nonnegative count, remainder 1 is equivalent to a count of 3k+1 with k≥0.
 
 ## Test cases
 
@@ -40,7 +44,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. This is bounded evidence, and inferred predicates still require notebook confirmation. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 
 ## Computation example `1111`
 

@@ -1,14 +1,18 @@
 # Problem 16
 
-Language: Every odd-numbered position is 1, positions start at 1 (inferred). Alphabet: `{0,1}`.
+Language: Every odd-numbered position is 1, positions start at 1. Alphabet: `{0,1}`.
 
-**Provisional:** this definition was inferred from the automaton. Confirm against the notebook before submission.
+The language definition was supplied and confirmed by the student.
 
 ## NFA diagram
 
 ![NFA diagram](images/NFA-16-diagram.svg)
 
 Generated from the supplied JFF transition relation; double circles denote accepting states.
+
+## Why the design recognizes the language
+
+State q0 means an even number of symbols has been read and the next position is odd; only `1` may leave q0. State q1 means an odd number has been read and the next position is even; either symbol may leave q1. Both states accept, so valid strings of either length accept. The empty string accepts because it has no odd position violating the condition.
 
 ## Test cases
 
@@ -40,7 +44,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. This is bounded evidence, and inferred predicates still require notebook confirmation. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 
 ## Computation example `110101`
 
