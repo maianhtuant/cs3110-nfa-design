@@ -44,7 +44,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 
 ## Computation example `110101`
 
@@ -63,3 +63,25 @@ This is a proposed corner case for study, not a claim that the student made a mi
 After `11`, the machine is in q0. The next `0` has no transition, so the active set becomes empty and stays empty. Being in an accepting state before all input is read does not imply acceptance.
 
 **Student evidence pending:** draw this computation by hand, including all branches for #8, then capture JFLAP Step by State or Step with Closure at the initial configuration and after each symbol. Repeat for at least three problems. Add the real hand-drawn photo and screenshots here; the table above does not replace them.
+
+JFLAP stops after attempting the third symbol (`0`), because q0 has no transition on `0`. The remaining suffix `101` cannot be consumed. The later empty sets in the table describe the abstract extended transition function; they are not additional executable JFLAP steps.
+
+## JFLAP and hand-drawn evidence
+
+See [EVIDENCE.md](EVIDENCE.md) for capture instructions and filenames.
+
+<!-- evidence:start -->
+
+Pending: `NFA-16-batch.png`.
+
+Pending: `NFA-16-tree.png`.
+
+Pending: `NFA-16-step-00.png`.
+
+Pending: `NFA-16-step-01.png`.
+
+Pending: `NFA-16-step-02.png`.
+
+Pending: `NFA-16-step-03.png`.
+
+<!-- evidence:end -->

@@ -38,6 +38,8 @@ On Windows use `;` instead of `:` between classpath entries.
 
 ## Finish the JFLAP evidence
 
+Follow [EVIDENCE.md](EVIDENCE.md) for exact image names and the three selected computation examples. After saving images, run `python3 tools/attach_evidence.py` to embed them in the reports. Review every screenshot against the expected results before submitting.
+
 1. Read the correctness argument in each report and check that you can explain what its states represent.
 2. Open each `NFA-XX.jff`, select Input → Multiple Run, load `NFA-XXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
 3. For at least three problems, use the proposed computation examples or an actual surprising string. Draw the complete computation tree by hand, photograph it, and capture the initial JFLAP configuration and each subsequent step. The reports supply state sets to check your drawing against, not substitutes for hand-drawn evidence.
@@ -48,6 +50,8 @@ On Windows use `;` instead of `:` between classpath entries.
 For a screenshot on macOS, press Shift–Command–4 and drag a region, or press Space after that shortcut to choose a window. On Windows, use Windows–Shift–S. On Linux, use the desktop Screenshot application. Include the input, result, and relevant state information in each capture.
 
 ## Learning reflection — student input required
+
+The student will write this reflection later.
 
 These prompts need the student's own experience; no personal struggle or surprise has been invented.
 

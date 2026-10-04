@@ -45,7 +45,7 @@ The suite includes short inputs, boundary counts, varied symbol orders, and long
 
 ## Verification status
 
-The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument below explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
+The included independent simulator checks every binary string through length 12 against the predicate above. All checks passed against the confirmed language definition. This is bounded test evidence; the argument above explains correctness for arbitrary input lengths. JFLAP runtime results are in `verification.txt`. **GUI Multiple Run screenshot remains to be captured**; runtime verification does not fulfill that screenshot requirement.
 
 ## Computation example `01111`
 
@@ -63,3 +63,13 @@ This is a proposed corner case for study, not a claim that the student made a mi
 One 0 and four 1 symbols satisfy both conditions. The machine accepts only when both the parity and remainder are correct.
 
 **Student evidence pending:** draw this computation by hand, including all branches for #8, then capture JFLAP Step by State or Step with Closure at the initial configuration and after each symbol. Repeat for at least three problems. Add the real hand-drawn photo and screenshots here; the table above does not replace them.
+
+## JFLAP and hand-drawn evidence
+
+See [EVIDENCE.md](EVIDENCE.md) for capture instructions and filenames.
+
+<!-- evidence:start -->
+
+Pending: `NFA-21-batch.png`.
+
+<!-- evidence:end -->
