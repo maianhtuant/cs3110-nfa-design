@@ -12,7 +12,7 @@ LANGUAGES = {
  21: ("Odd number of 0 symbols AND number of 1 symbols congruent to 1 modulo 3", lambda s: s.count("0") % 2 == 1 and s.count("1") % 3 == 1),
 }
 def read(n):
- a=ET.parse(ROOT / f"NFA-{n:02}.jff").getroot().find("automaton")
+ a=ET.parse(ROOT / f"n{n:02}.jff").getroot().find("automaton")
  start={s.attrib["id"] for s in a.findall("state") if s.find("initial") is not None}
  final={s.attrib["id"] for s in a.findall("state") if s.find("final") is not None}
  edges=[(t.findtext("from"),t.findtext("read") or "",t.findtext("to")) for t in a.findall("transition")]
@@ -40,7 +40,7 @@ def check():
     if actual != predicate(s): raise AssertionError((n,s,actual,predicate(s)))
     count+=1
   previous=True
-  for s in (ROOT/f"NFA-{n:02}t.txt").read_text().split():
+  for s in (ROOT/f"n{n:02}t.txt").read_text().split():
    expected=predicate(s); actual,_=trace(n,s)
    assert actual == expected
    assert previous or not expected, "Accepted input after rejected input"

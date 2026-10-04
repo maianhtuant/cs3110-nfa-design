@@ -6,15 +6,15 @@ Problems **8, 12, 16, 20, and 21**. The initial commit preserves the five origin
 
 | Problem | Language currently checked | Report |
 |---|---|---|
-| 8 | {string s\| s starts with 01 and ends with 10 } | [NFA-08r.md](NFA-08r.md) |
-| 12 | {string s\| s contains exactly 3 1's } | [NFA-12r.md](NFA-12r.md) |
-| 16 | {string s\| every odd position of s is 1, starting at 1 in positional index } (e.g. 101 is in the lang.) | [NFA-16r.md](NFA-16r.md) |
-| 20 | {string s\| s has 3k+1 of 1's, where k>=0 or odd number of 0's} | [NFA-20r.md](NFA-20r.md) |
-| 21 | {string s\| s has 3k+1 of 1's, where k>=0 and odd number of 0's} | [NFA-21r.md](NFA-21r.md) |
+| 8 | {string s\| s starts with 01 and ends with 10 } | [n08r.md](n08r.md) |
+| 12 | {string s\| s contains exactly 3 1's } | [n12r.md](n12r.md) |
+| 16 | {string s\| every odd position of s is 1, starting at 1 in positional index } (e.g. 101 is in the lang.) | [n16r.md](n16r.md) |
+| 20 | {string s\| s has 3k+1 of 1's, where k>=0 or odd number of 0's} | [n20r.md](n20r.md) |
+| 21 | {string s\| s has 3k+1 of 1's, where k>=0 and odd number of 0's} | [n21r.md](n21r.md) |
 
 ## Files and verification
 
-For each problem, `NFA-XX.jff` is the original automaton, `NFA-XXt.txt` is a JFLAP input file, and `NFA-XXr.md` contains its diagram, expected test results, and evidence status. Tests contain only strings, one per line, with accepting strings first. The empty string must be added manually with **Enter Lambda**; a blank line in the text file is not an empty-string test. [JFLAP's official tutorial](https://www.jflap.org/tutorial/fa/createfa/fa.html) documents whitespace-delimited loading and Multiple Run.
+For each problem, `nXX.jff` is the original automaton, `nXXt.txt` is a JFLAP input file, and `nXXr.md` contains its diagram, expected test results, and evidence status. Tests contain only strings, one per line, with accepting strings first. The empty string must be added manually with **Enter Lambda**; a blank line in the text file is not an empty-string test. [JFLAP's official tutorial](https://www.jflap.org/tutorial/fa/createfa/fa.html) documents whitespace-delimited loading and Multiple Run.
 
 The original designs were not changed: no discrepancy was found against the current predicates. No artificial mistakes or backdated commits were introduced. Four machines are deterministic (with #16 partial); these are mathematically valid NFAs, though the instructor may want explicit nondeterminism.
 
@@ -41,7 +41,7 @@ On Windows use `;` instead of `:` between classpath entries.
 Follow [EVIDENCE.md](EVIDENCE.md) for exact image names and the three selected computation examples. After saving images, run `python3 tools/attach_evidence.py` to embed them in the reports. Review every screenshot against the expected results before submitting.
 
 1. Read the correctness argument in each report and check that you can explain what its states represent.
-2. Open each `NFA-XX.jff`, select Input → Multiple Run, load `NFA-XXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
+2. Open each `nXX.jff`, select Input → Multiple Run, load `nXXt.txt`, add ε with Enter Lambda, and click Run Inputs. Compare every result with its report. Save screenshots in `images/` and embed them in the matching report.
 3. For at least three problems, use the proposed computation examples or an actual surprising string. Draw the complete computation tree by hand, photograph it, and capture the initial JFLAP configuration and each subsequent step. The reports supply state sets to check your drawing against, not substitutes for hand-drawn evidence.
 4. Complete the personal reflection below from your actual experience, then commit it.
 
@@ -70,4 +70,3 @@ To avoid missing next states in future controller or compiler tasks, projects, a
 This exercise showed me why testing should include the shortest accepted strings, the empty string, typical inputs, and boundary cases. For counting conditions, I should test values immediately below, at, and above the required count. For combined conditions, I should test all four possibilities: both conditions true, only the first true, only the second true, and both false.
 
 Writing down what each state means makes a design easier to explain and check. Keeping the original design and later changes in GitHub also makes the work easier to review. One question I would like to explore further is when an NFA makes a language easier to design, and when tracking several conditions together in a DFA is clearer.
-
