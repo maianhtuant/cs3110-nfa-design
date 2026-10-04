@@ -26,7 +26,7 @@ Name additional screenshots `nXX-batch-02.png`, etc., and embed those separately
 
 ## Uploaded handwritten test traces
 
-[handwritetest.pdf](handwritetest.pdf) contains active-state traces for #8, #12, and #16. The #8 and #16 traces are correct. For #12, `01010101` has four 1 symbols and rejects; the accepting state has no `1` transition, so the computation cannot cycle back to A. The report preserves and explains this handwritten mistake. Correct the handwritten #12 trace and provide the matching JFLAP step screenshots. The #8 trace lists state sets; individual branches and dead branches would make the computation tree explicit.
+[handwritetest.pdf](handwritetest.pdf) contains revised active-state traces for #8, #12, and #16, all checked and correct. For #12, the revised notes correctly reject a fourth 1 and accept extra zeros after the third 1. Matching JFLAP step screenshots remain pending. The #8 trace lists state sets; drawing individual branches and marking dead branches would make its computation tree explicit.
 
 ## Hand-drawn trees and step screenshots for three problems
 
