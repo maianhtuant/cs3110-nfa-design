@@ -71,4 +71,3 @@ This exercise showed me why testing should include the shortest accepted strings
 
 Writing down what each state means makes a design easier to explain and check. Keeping the original design and later changes in GitHub also makes the work easier to review. One question I would like to explore further is when an NFA makes a language easier to design, and when tracking several conditions together in a DFA is clearer.
 
-AI assistance was used to check the existing automata, generate test sets and diagrams, run verification, and help edit this reflection from my notes. Hand-drawn computation trees and step-by-step JFLAP evidence remain to be added.
